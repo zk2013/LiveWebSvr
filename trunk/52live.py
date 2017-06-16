@@ -12,6 +12,7 @@ from livecfg import dbcfg
 from dbproxy import *
  
 from  login import LoginHandler # handle login
+from  livelist import LiveListHandler # handle login
 
 from tornado.options import define, options
 
@@ -41,6 +42,7 @@ def main():
 		(r"/", MainHandler),
 		(r"/ad/open", AdHandler),
 		(r"/login/mResponse",LoginHandler),
+		(r"/home/hot",LiveListHandler),
 	])
 	
 	http_server = tornado.httpserver.HTTPServer(application)
